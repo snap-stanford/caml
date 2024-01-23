@@ -1,9 +1,9 @@
 # Zero-shot causal learning
 
 
-******NOTE: THIS REPOSITORY IS EXTREMELY MESSY AND WILL BE FULLY CLEANED PRIOR TO PUBLICATION*****. W
+******NOTE: THIS REPOSITORY IS EXTREMELY MESSY AND IN NEED OF FURTHER CLEANING*****. 
 
-While it is functional, it is not pretty at this point, we will clean it up and encapsulate after the submission. Also, the branch for LINCS setting in the LINCS_BRANCH folder. 
+While it is functional, it is not pretty at this point. We hope to clean it up and encapsulate it soone. Also, the branch for LINCS setting in the LINCS_BRANCH folder. 
 
 
 ## Experiments 
