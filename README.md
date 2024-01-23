@@ -4,7 +4,14 @@
 
 CaML (CAusal Meta-Learning) is a framework to predict the personalized effects of novel interventions on specific individuals. 
 
+###  Overview of the zero-shot causal learning problem 
+
 ![plot](./figure1.png)
+
+### Visual illustration of the CaML (causal meta-learning) framework 
+
+![plot](./figure2.png)
+
 
 # Citation 
 
