@@ -1,0 +1,21 @@
+,DrugBankID,name,CNT,split
+382,DB00623,Fluphenazine,10197,test
+699,DB00319,Piperacillin,10994,test
+566,DB01024,Mycophenolic acid,11708,test
+706,DB00853,Temozolomide,13874,test
+624,DB00480,Lenalidomide,20393,val
+397,DB01005,Hydroxyurea,32777,test
+359,DB00209,Trospium,34700,test
+251,DB01101,Capecitabine,49793,test
+87,DB00675,Tamoxifen,139733,test
+481,DB00580,Valdecoxib,156341,val
+220,DB00533,Rofecoxib,195986,test
+112,DB00864,Tacrolimus,209935,test
+150,DB01118,Amiodarone,256455,test
+107,DB00813,Fentanyl,261000,test
+560,DB01043,Memantine,306832,val
+73,DB00563,Methotrexate,323387,test
+261,DB00448,Lansoprazole,623984,test
+664,DB00230,Pregabalin,636995,test
+33,DB00273,Topiramate,716260,test
+285,DB00669,Sumatriptan,803792,val

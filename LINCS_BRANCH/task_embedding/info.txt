@@ -1,0 +1,4 @@
+- primekg_model contains the processed prime KG and a KG embedding model as provided and trained by myasu
+
+- task_embeddings currently computed and located on `/lfs/hyperturing1/0/anon/ehr-drug-sides/task_embedding`
+

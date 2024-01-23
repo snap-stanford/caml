@@ -1,0 +1,108 @@
+program: metalearn/train_caml.py
+method: grid
+metric:
+  goal: maximize
+  name: "best_Mean Val rate @ 0.998_value"
+
+parameters:
+  max_train_drugs:
+    values: [1] ## add 4
+    
+  meta_batch_size:
+    values: [1]
+
+  num_como_layers:
+    values: [2]
+
+  num_covariates_layer:
+    values: [2]
+
+  num_propensity_layers:
+    values: [2]
+
+  num_treatment_layer:
+    values: [6]
+
+  pro_dropout:
+    values: [0.1]
+
+  l1_reg:
+    values: [1e-7]
+
+  dim_output:
+    values: [256]
+
+  dim_hidden_treatment:
+    values: [256]
+
+  dim_hidden_covariates:
+    values: [128]
+
+  dim_hidden_como:
+    values: [256]
+
+  dim_hidden_propensity:
+    values: [32]
+
+  learning_rate:
+    values: [0.0001]
+
+  lr:
+    values: [0.003]
+
+  pro_lr:
+    values: [0.001]
+
+  sin_weight_decay:
+    values: [0]
+
+  pro_weight_decay:
+    values: [0.005]
+
+  gnn_weight_decay:
+    values: [0.005]
+
+  caml_k:
+    values: [1]
+
+  deterministic_sample:
+    values: ["false"]
+
+  all_tasks_baseline:
+    values: ["false"]
+
+  task_sample_weighting:
+    values: ["enable"]
+
+  sin_learner:
+    values: ["true"]
+
+  task_embedding_config:
+    values: ["early_concat"]
+
+  use_task_embeddings:
+    values: ["true"]
+
+  step:
+    values: ["y0"]
+
+  n_iterations:
+    values: [10000]
+
+  val_interval:
+    values: [50]
+
+  sin_learner_stage1_loc:
+    values: ['/home/anon/ehr-drug-sides/model_outputs/ehr_sin_stage1_model/model_500.pt']
+
+  dummy_repetition:
+    values: [0,1,2,3,4,5,6,7]
+
+  TEST_MODE:
+    values: ['true']
+
+  output_suffix:
+    values: ['sin_learner_table3']
+
+  val_test_location:
+    values: ['metalearn/splits/icml_new_pair_split.csv']

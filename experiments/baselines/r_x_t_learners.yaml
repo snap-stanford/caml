@@ -1,0 +1,110 @@
+program: metalearn/train_caml.py
+method: random
+metric:
+  goal: maximize
+  name: "best_Mean Val rate @ 0.998_value"
+
+parameters:
+  rf_n_estimators:
+    max: 250
+    min: 50
+
+  rf_max_depth:
+    min: 10
+    max: 50
+  
+  rf_min_samples_split:
+    min: 2
+    max: 8
+
+  rf_criterion_regress:
+    values: ["squared_error","absolute_error"]
+
+  rf_criterion_binary:
+    values: ["gini","entropy"]
+
+  rf_max_features:
+    values: ["sqrt","log2","auto"]
+
+  r_learner:
+    values: ["true"]
+
+
+
+
+
+-----
+-----
+
+
+program: metalearn/train_caml.py
+method: random
+metric:
+  goal: maximize
+  name: "best_Mean Val rate @ 0.998_value"
+
+parameters:
+  rf_n_estimators:
+    max: 250
+    min: 50
+
+  rf_max_depth:
+    min: 10
+    max: 50
+  
+  rf_min_samples_split:
+    min: 2
+    max: 8
+
+  rf_criterion_regress:
+    values: ["squared_error","absolute_error"]
+
+  rf_criterion_binary:
+    values: ["gini","entropy"]
+
+  rf_max_features:
+    values: ["sqrt","log2","auto"]
+
+  t_learner:
+    values: ["true"]
+
+  
+
+
+-------
+-------
+
+
+
+program: metalearn/train_caml.py
+method: random
+metric:
+  goal: maximize
+  name: "best_Mean Val rate @ 0.998_value"
+
+parameters:
+  rf_n_estimators:
+    max: 250
+    min: 50
+
+  rf_max_depth:
+    min: 10
+    max: 50
+  
+  rf_min_samples_split:
+    min: 2
+    max: 8
+
+  rf_criterion_regress:
+    values: ["squared_error","absolute_error"]
+
+  rf_criterion_binary:
+    values: ["gini","entropy"]
+
+  rf_max_features:
+    values: ["sqrt","log2","auto"]
+
+  x_learner:
+    values: ["true"]
+
+  

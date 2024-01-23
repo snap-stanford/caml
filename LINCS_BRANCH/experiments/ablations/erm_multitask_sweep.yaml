@@ -1,0 +1,70 @@
+method: grid
+parameters:
+  batch_norm:
+    value: "false"
+  batch_size:
+    value: 8192
+  dropout:
+    values:
+      - 0
+  dry_load:
+    value: "false"
+  dummy_repetition:
+    values:
+      - 0
+      - 1
+      - 2
+  kge:
+    value: stargraph
+  l1_reg:
+    value: 5e-07
+  layer_norm_inner_layers:
+    values:
+      - "false"
+  learning_rate:
+    value: 0.001
+  max_train_drugs:
+    value: 2
+  meta_batch_size:
+    value: 4
+  meta_learning_rate:
+    value: 1
+  meta_learning_rate_final_ratio:
+    value: 0.1
+  min_pos_label:
+    value: 50
+  model_dim:
+    value: 256
+  n_iterations:
+    value: 1000
+  n_layers:
+    values:
+      - 6
+  caml_k:
+    value: 1
+  residual:
+    value: "true"
+  set_task_embeddings_to_random:
+    value: 0
+  step:
+    value: tau
+  task_embedding_aggregation:
+    value: sum
+  task_embedding_config:
+    values:
+      - late_concat_layernorm
+  task_sample_weighting:
+    value: "true"
+  use_lr_scheduler:
+    value: "false"
+  use_random_sampler:
+    value: "false"
+  use_task_embeddings:
+    value: "true"
+  val_interval:
+    value: 10
+  val_test_location:
+    value: metalearn/splits/new_splits_final.csv
+  weight_decay:
+    value: 0.005
+program: metalearn/train_caml.py

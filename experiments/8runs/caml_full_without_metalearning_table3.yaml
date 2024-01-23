@@ -1,0 +1,60 @@
+program: metalearn/train_caml.py
+method: grid
+metric:
+  goal: maximize
+  name: "best_Mean Val rate @ 0.998_value"
+
+parameters:
+  max_train_drugs:
+    values: [1] ## add 4
+
+  meta_batch_size:
+    values: [1] ## add 4
+
+  n_layers:
+    values: [4]
+
+  dropout:
+    values: [0]
+
+  l1_reg:
+    values: [5e-7]
+
+  model_dim:
+    values: [256]
+
+  learning_rate:
+    values: [0.0003]
+
+  weight_decay:
+    values: [0.005]
+
+  caml_k:
+    values: [1]
+
+  deterministic_sample:
+    values: ["false"]
+
+  task_sample_weighting:
+    values: ["enable"] ## disable, max_train_drugs=1
+
+  task_embedding_config:
+    values: ["late_concat"]
+
+  use_task_embeddings:
+    values: ["true"]
+
+  step:
+    values: ["tau"]
+
+  n_iterations:
+    values: [10000] ## make lower 1000
+
+  val_interval:
+    values: [50]
+
+  batch_norm:
+    values: ['false']
+
+  dummy_repetition:
+    values: [0,1,2,3,4,5,6,7]

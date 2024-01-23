@@ -1,0 +1,95 @@
+program: metalearn/train_caml_lincs.py
+method: grid
+metric:
+  goal: minimize
+  name: "best_val_mse_diff_20_value"
+
+parameters:
+  meta_batch_size:
+    values: [1] ## add 4
+
+  num_covariates_layer:
+    values: [4]
+
+  num_treatment_layer:
+    values: [2]
+
+  dim_hidden_treatment:
+    values: [128]
+
+  dim_hidden_covariates:
+    values: [256]
+
+  batch_size:
+    values: [20] ## add 4
+
+  n_layers:
+    values: [6]
+
+  meta_learning_rate:
+    values: [0.1]
+
+  independence_regularisation_coeff:
+    values: [0.01]
+
+  dropout:
+    values: [0.1]
+
+  l1_reg:
+    values: [0]
+
+  model_dim:
+    values: [1024]
+
+  sin_weight_decay:
+    values: [0.005]
+
+  learning_rate:
+    values: [0.001]
+
+  weight_decay:
+    values: [0.1]
+
+  caml_k:
+    values: [3]
+
+  deterministic_sample:
+    values: ["false"]
+
+  task_sample_weighting:
+    values: ["enable"] ## disable, max_train_drugs=1
+
+  task_embedding_config:
+    values: ["late_concat"]
+
+  use_task_embeddings:
+    values: ["true"]
+
+  step:
+    values: ["tau"]
+
+  n_iterations:
+    values: [50000] ## make lower 1000
+
+  val_interval:
+    values: [100]
+
+  batch_norm:
+    values: ['false']
+
+  graphite_learner:
+    values: ['true']
+
+  impute_y0:
+    values: ['false']
+
+  use_random_sampler:
+    values: ['true']
+
+  output_suffix:
+    values: ['graphite_table2']
+
+  dummy_repetition:
+    values: [0,1,2,3,4,5,6,7]
+
+

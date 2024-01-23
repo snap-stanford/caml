@@ -1,0 +1,98 @@
+program: metalearn/train_caml.py
+method: random
+metric:
+  goal: maximize
+  name: "best_Mean Val rate @ 0.998_value"
+
+parameters:
+  meta_batch_size:
+    values: [1]
+
+  num_como_layers:
+    values: [2,4,6]
+
+  num_covariates_layer:
+    values: [2,4,6]
+
+  num_propensity_layers:
+    values: [2,4,6]
+
+  num_treatment_layer:
+    values: [2,4,6]
+
+  pro_dropout:
+    values: [0, 0.1]
+
+  l1_reg:
+    values: [0, 1e-7, 5e-7]
+
+  dim_output:
+    values: [128, 256]
+
+  dim_hidden_treatment:
+    values: [128, 256]
+
+  dim_hidden_covariates:
+    values: [128, 256]
+
+  dim_hidden_como:
+    values: [128, 256]
+
+  dim_hidden_propensity:
+    values: [16, 32, 64, 128]
+
+  learning_rate:
+    values: [0.003, 0.001, 0.0003, 0.0001]
+
+  lr:
+    values: [0.003, 0.001, 0.0003, 0.0001]
+
+  pro_lr:
+    values: [0.003, 0.001, 0.0003, 0.0001]
+
+  sin_weight_decay:
+    values: [0.0, 0.005]
+
+  pro_weight_decay:
+    values: [0.0, 0.005]
+
+  gnn_weight_decay:
+    values: [0.0, 0.005]
+
+  caml_k:
+    values: [1,10,50]
+
+  deterministic_sample:
+    values: ["false"]
+
+  all_tasks_baseline:
+    values: ["false"]
+
+  task_sample_weighting:
+    values: ["enable"]
+
+  all_tasks_baseline_eval_prob:
+    max: 0.5
+    min: 0.05
+
+  sin_learner:
+    values: ["true"]
+
+  task_embedding_config:
+    values: ["early_concat"]
+
+  use_task_embeddings:
+    values: ["true"]
+
+  step:
+    values: ["y0"]
+
+  n_iterations:
+    values: [10000]
+
+  val_interval:
+    values: [50]
+
+  sin_learner_stage1_loc:
+    values: ['<local/path/removed/for/anonymity>/model_500.pt']
+

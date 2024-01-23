@@ -1,0 +1,77 @@
+program: metalearn/train_caml.py
+method: grid
+metric:
+  goal: maximize
+  name: "best_Mean Val rate @ 0.998_value"
+
+parameters:
+  num_covariates_layer:
+    values: [2]
+
+  num_treatment_layer:
+    values: [4]
+
+  dropout:
+    values: [0.1]
+
+  l1_reg:
+    values: [5e-7]
+
+  dim_hidden_treatment:
+    values: [128]
+
+  dim_hidden_covariates:
+    values: [256]
+
+  learning_rate:
+    values: [0.0003]
+
+  sin_weight_decay:
+    values: [0.005]
+
+  caml_k:
+    values: [50]
+
+  independence_regularisation_coeff:
+    values: [0.0]
+
+  batch_norm:
+    values: ["true"]
+
+  deterministic_sample:
+    values: ["false"]
+
+  all_tasks_baseline:
+    values: ["false"]
+
+  task_sample_weighting:
+    values: ["enable"]
+
+  graphite_learner:
+    values: ["true"]
+
+  task_embedding_config:
+    values: ["early_concat"]
+
+  use_task_embeddings:
+    values: ["true"]
+
+  step:
+    values: ["y0"]
+
+  n_iterations:
+    values: [10000]
+
+  val_interval:
+    values: [50]
+
+  meta_batch_size:
+    values: [1]
+
+  batch_size:
+    values: [512]
+
+  dummy_repetition:
+    values: [0,1,2,3,4,5,6,7]
+
+

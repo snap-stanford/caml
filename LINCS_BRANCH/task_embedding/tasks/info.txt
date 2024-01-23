@@ -1,0 +1,4 @@
+- frequent drugs.csv: lists drugs that are frequent (>500 patients) in EHR data
+- used_drugs.csv: lists drugs that can be mapped into PrimeKG, also lists their index to the entities.csv (and node embeddings index).
+- tasks.pickle: dictionary of tasks listing each contributing drug and side effect
+- task_embedding: dictionary of embeddings for each task  

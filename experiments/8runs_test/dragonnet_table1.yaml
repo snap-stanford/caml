@@ -1,0 +1,47 @@
+program: metalearn/train_caml.py
+method: grid 
+metric:
+  goal: maximize
+  name: "best_Mean Val rate @ 0.998_value"
+
+parameters:
+  dl_n_layers_out:
+    values: [1]
+
+  dl_n_layers_r:
+    values: [6]
+
+  dl_n_units_r:
+    values: [256]
+
+  dl_n_units_out:
+    values: [128]
+
+  dl_weight_decay:
+    values: [0.005]
+
+  dl_lr:
+    values: [0.0003]
+
+  dl_dropout:
+    values: ["true"]
+
+  dl_learner:
+    values: ["true"]
+
+  dl_learner_type:
+    values: ["DragonNet"]
+
+  dummy_repetition:
+    values: [0,1,2,3,4,5,6,7]
+
+  TEST_MODE:
+    values: ['true']
+
+  output_suffix:
+    values: ['dragonnet_table1']
+
+python metalearn/train_caml.py --dl_n_layers_out=1 --dl_n_layers_r=6 \
+ --dl_n_units=256 --dl_n_units_out=128 --dl_weight_decay=0.005 --dl_lr=0.0003 \
+ --dl_dropout='true' -- dl_learner='true' --dl_learner_type='DragonNet' --dummy_repetition=6 \
+ --TEST_MODE='true' --output_suffix='dragonnet_table1'

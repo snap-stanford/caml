@@ -1,0 +1,69 @@
+program: metalearn/train_caml_lincs.py
+method: grid
+metric:
+  goal: minimize
+  name: "best_val_mse_diff_20_value"
+
+parameters:
+  meta_batch_size:
+    values: [1] ## add 4
+
+  batch_size:
+    values: [20] ## add 4
+
+  n_layers:
+    values: [4]
+
+  meta_learning_rate:
+    values: [0.1]
+
+  dropout:
+    values: [0.1]
+
+  l1_reg:
+    values: [0]
+
+  model_dim:
+    values: [1024]
+
+  learning_rate:
+    values: [0.0003]
+
+  weight_decay:
+    values: [0.1]
+
+  caml_k:
+    values: [1]
+
+  task_embedding_config:
+    values: ["late_concat"]
+
+  use_task_embeddings:
+    values: ["true"]
+
+  step:
+    values: ["tau"]
+
+  n_iterations:
+    values: [50000] ## make lower 1000
+
+  val_interval:
+    values: [100]
+
+  batch_norm:
+    values: ['false']
+
+  null_patients2:
+    values: ['true']
+
+  impute_y0:
+    values: ['false']
+
+  use_random_sampler:
+    values: ['true']
+
+  output_suffix:
+    values: ['caml_wo_metalearn_table2']
+
+  dummy_repetition:
+    values: [0,1,2,3,4,5,6,7]

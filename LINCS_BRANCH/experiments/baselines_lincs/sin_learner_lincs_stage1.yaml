@@ -1,0 +1,67 @@
+program: metalearn/train_caml_lincs.py
+method: random
+metric:
+  goal: minimize
+  name: "best_val_y1_outcome_mse_diff_20_value"
+
+parameters:
+  meta_batch_size:
+    values: [1]
+
+  batch_size:
+    values: [20] ## add 4
+
+  n_layers:
+    values: [2,4,6]
+
+  dropout:
+    values: [0, 0.1]
+
+  l1_reg:
+    values: [0, 1e-7, 5e-7]
+
+  model_dim:
+    values: [512, 1024]
+
+  learning_rate:
+    values: [0.003, 0.001, 0.0003, 0.0001]
+
+  meta_learning_rate:
+    values: [0.1,0.5,0.9]
+
+  weight_decay:
+    values: [0.1]
+
+  caml_k:
+    values: [1,2,3]
+
+  deterministic_sample:
+    values: ["false"]
+
+  all_tasks_baseline:
+    values: ["false"]
+
+  task_sample_weighting:
+    values: ["enable"]
+
+  all_tasks_baseline_eval_prob:
+    max: 0.5
+    min: 0.05
+
+  sin_learner_stage1:
+    values: ["true"]
+
+  task_embedding_config:
+    values: ["late_concat"]
+
+  use_task_embeddings:
+    values: ["true"]
+
+  step:
+    values: ["tau"]
+
+  n_iterations:
+    values: [50000]
+
+  val_interval:
+    values: [50]

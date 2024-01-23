@@ -1,0 +1,19 @@
+program: metalearn/train_caml.py
+method: grid 
+metric:
+  goal: maximize
+  name: "best_Mean Val rate @ 0.998_value"
+
+parameters:
+  
+  random_baseline:
+    values: ["true"]
+
+  dummy_repetition:
+    values: [0,1,2,3,4,5,6,7]
+
+  TEST_MODE:
+    values: ['true']
+
+  output_suffix:
+    values: ['random_table1']

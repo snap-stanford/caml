@@ -1,0 +1,3 @@
+,DrugBankID,MEDRA_NAME,CNT,Drugs,ndrugs,rnk,split
+100,DB00563,Pancytopenia,815921,DB00563,1,90,val
+50,DB00230,Pancytopenia,636995,DB00230,1,111,test

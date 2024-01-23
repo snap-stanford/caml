@@ -1,0 +1,57 @@
+program: metalearn/train_caml.py
+method: grid 
+metric:
+  goal: maximize
+  name: "best_Mean Val rate @ 0.998_value"
+
+parameters:
+  dl_n_layers_out:
+    values: [2]
+
+  dl_n_layers_r:
+    values: [2]
+
+  dl_n_units_p_out:
+    values: [128]
+
+  dl_n_units_s_out:
+    values: [256]
+
+  dl_n_units_s_r:
+    values: [32]
+
+  dl_n_units_p_r:
+    values: [32]
+
+  dl_weight_decay:
+    values: [0.005]
+
+  dl_lr:
+    values: [0.001]
+
+  dl_penalty_orthogonal:
+    values: [0.1]
+
+  dl_dropout:
+    values: ["false"]
+
+  dl_learner:
+    values: ["true"]
+
+  dl_learner_type:
+    values: ["FlexTENet"]
+
+  dl_private_out:
+    values: ["true"]
+
+  dummy_repetition:
+    values: [0,1,2,3,4,5,6,7]
+
+  TEST_MODE:
+    values: ['true']
+
+  output_suffix:
+    values: ['flextennet_table3']
+
+  val_test_location:
+    values: ['metalearn/splits/icml_new_pair_split.csv']

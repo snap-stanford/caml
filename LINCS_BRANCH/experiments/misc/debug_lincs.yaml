@@ -1,0 +1,54 @@
+program: metalearn/train_caml_lincs.py
+method: grid
+metric:
+  goal: minimize
+  name: "best_val_mse_diff_20_value"
+
+parameters:
+  meta_batch_size:
+    values: [1] ## add 4
+
+  batch_size:
+    values: [20] ## add 4
+
+  n_layers:
+    values: [4]
+
+  meta_learning_rate:
+    values: [0.1]
+
+  dropout:
+    values: [0.1]
+
+  l1_reg:
+    values: [0.00001]
+
+  model_dim:
+    values: [256, 1000]
+
+  learning_rate:
+    values: [0.001]
+
+  weight_decay:
+    values: [0.1]
+
+  caml_k:
+    values: [1,2,3]
+
+  n_iterations:
+    values: [50000] 
+
+  val_interval:
+    values: [100]
+
+  batch_norm:
+    values: ['false']
+
+  null_patients2:
+    values: ['true']
+
+  impute_y0:
+    values: ['true','false']
+
+  use_random_sampler:
+    values: ['true','false']

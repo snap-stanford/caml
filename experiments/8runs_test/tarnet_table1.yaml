@@ -1,0 +1,45 @@
+program: metalearn/train_caml.py
+method: grid 
+metric:
+  goal: maximize
+  name: "best_Mean Val rate @ 0.99_value"
+
+parameters:
+  dl_n_layers_out:
+    values: [2]
+
+  dl_n_layers_r:
+    values: [4]
+
+  dl_n_units_r:
+    values: [256]
+
+  dl_n_units_out:
+    values: [128]
+
+  dl_weight_decay:
+    values: [0.005]
+
+  dl_lr:
+    values: [0.0001]
+
+  dl_dropout:
+    values: ["true"]
+
+  dl_learner:
+    values: ["true"]
+
+  dl_learner_type:
+    values: ["TARNet"]
+
+  dl_penalty_disc:
+    values: [0]
+
+  dummy_repetition:
+    values: [0,1,2,3,4,5,6,7]
+
+  TEST_MODE:
+    values: ['true']
+
+  output_suffix:
+    values: ['tarnet_table1']

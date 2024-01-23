@@ -1,0 +1,40 @@
+program: metalearn/train_caml.py
+method: grid
+metric:
+  goal: maximize
+  name: "best_Mean Val rate @ 0.998_value"
+
+parameters:
+  rf_n_estimators:
+    values: [111]
+    
+  rf_max_depth:
+    values: [35]
+  
+  rf_min_samples_split:
+    values: [6] 
+
+  rf_criterion_regress:
+    values: ["squared_error"]
+
+  rf_criterion_binary:
+    values: ["entropy"]
+
+  rf_max_features:
+    values: ["log2"]
+
+  x_learner:
+    values: ["true"]
+
+  dummy_repetition:
+    values: [0,1,2,3,4,5,6,7]
+
+  TEST_MODE:
+    values: ['true']
+
+  output_suffix:
+    values: ['x_learner_table3']
+
+  val_test_location:
+    values: ['metalearn/splits/icml_new_pair_split.csv']
+  

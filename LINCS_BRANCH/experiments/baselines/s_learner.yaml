@@ -1,0 +1,62 @@
+program: metalearn/train_caml.py
+method: random
+metric:
+  goal: maximize
+  name: "best_Mean Val rate @ 0.998_value"
+
+parameters:
+
+  meta_batch_size:
+    values: [1]
+
+  n_layers:
+    values: [2,4,6]
+
+  dropout:
+    values: [0, 0.1]
+
+  l1_reg:
+    values: [0, 1e-7, 5e-7]
+
+  model_dim:
+    values: [128, 256]
+
+  learning_rate:
+    values: [0.003, 0.001, 0.0003, 0.0001]
+
+  weight_decay:
+    values: [0.005]
+
+  caml_k:
+    values: [1,10,50]
+
+  deterministic_sample:
+    values: ["false"]
+
+  all_tasks_baseline:
+    values: ["true"]
+
+  task_sample_weighting:
+    values: ["enable"]
+
+  all_tasks_baseline_eval_prob:
+    max: 0.5
+    min: 0.05
+
+  s_learner:
+    values: ["true"]
+
+  task_embedding_config:
+    values: ["early_concat"]
+
+  use_task_embeddings:
+    values: ["false"]
+
+  step:
+    values: ["y0"]
+
+  n_iterations:
+    values: [10000]
+
+  val_interval:
+    values: [50]
