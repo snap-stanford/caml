@@ -1,5 +1,34 @@
 # Zero-shot causal learning
 
+# Overview 
+
+CaML (CAusal Meta-Learning) is a framework to predict the personalized effects of novel interventions on specific individuals. 
+
+![plot](./figure1.png)
+
+# Citation 
+
+MLA:
+
+	Nilforoshan, H., Moor, M., Roohani, Y., Chen, Y., Šurina, A., Yasunaga, M., Oblak, S. and Leskovec, J., 2023. Zero-shot causal learning. NeurIPS 2023, the Thirty-seventh Annual Conference on Neural Information Processing Systems.
+
+bibtex:
+
+
+
+    @inproceedings{nilforoshan2023zero,
+      title={Causal conceptions of fairness and their consequences},
+      author={Nilforoshan, Hamed and Moor, Michael and Roohani, Yusuf and Chen, Yining and {\v{S}}urina, Anja and Yasunaga, Michihiro and Oblak, Sara and Leskovec, Jure},
+      booktitle={Conference on Neural Information Processing Systems},
+      year={2023},
+      organization={Advances in Neural Information Processing Systems}
+    }
+
+    
+# Abstract 
+
+Predicting how different interventions will causally affect a specific individual is important in a variety of domains such as personalized medicine, public policy, and online marketing. There are a large number of methods to predict the effect of an existing intervention based on historical data from individuals who received it. However, in many settings it is important to predict the effects of novel interventions (e.g., a newly invented drug), which these methods do not address. Here, we consider zero-shot causal learning: predicting the personalized effects of a novel intervention. We propose CaML, a causal meta-learning framework which formulates the personalized prediction of each intervention's effect as a task. CaML trains a single meta-model across thousands of tasks, each constructed by sampling an intervention, along with its recipients and nonrecipients. By leveraging both intervention information (e.g., a drug's attributes) and individual features (e.g., a patient's history), CaML is able to predict the personalized effects of novel interventions that do not exist at the time of training. Experimental results on real world datasets in large-scale medical claims and cell-line perturbations demonstrate the effectiveness of our approach. Most strikingly, CaML's zero-shot predictions outperform even strong baselines trained directly on data from the test interventions.
+
 
 ******NOTE: THIS REPOSITORY IS EXTREMELY MESSY AND IN NEED OF FURTHER CLEANING*****. 
 
@@ -33,8 +62,7 @@ Key parts of this are outlined below:
 - Lines 325-342 starting with ``if use_task_embeddings:`` Here we create the associated dataset and dataloader for the task. Note that if we are using task embeddings the ClaimsTaskDataset class separates the sparse patient-level features (X_train_1) from the dense drug-level features (task_embedding) so that we have the option to concatenate them later on
 - Lines 391-460 starting with ``if iteration%args.val_interval==0:`` Here we validate the zero-shot performance of our model on a set of unseen validation drugs. We loop through the drugs, generate predictions, and then measure performance using 2 main metrics (RATE, Recall)
 
-``$ (NOTE: the exact line numbers may be out of sync with latest code stage, but the explanations may still be useful) 
-
+(NOTE: the exact line numbers may be out of sync with latest code stage, but the explanations may still be useful) 
 While our models are currently initialized inside the train_caml.py script depending on experimental configurations, `src/models/caml.py` contains a model class pointing to the building blocks of our method. (We intend to clean all methods to have separate model classes with model-specific parsers). 
 
 ## Environment
